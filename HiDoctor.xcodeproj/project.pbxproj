@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0D106A42748B71800598734 /* AppointmentReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D106A32748B71800598734 /* AppointmentReminder.swift */; };
 		B0D9D1C72748002B0062485C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D1C62748002B0062485C /* AppDelegate.swift */; };
 		B0D9D1C92748002B0062485C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D1C82748002B0062485C /* SceneDelegate.swift */; };
 		B0D9D1CB2748002B0062485C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D1CA2748002B0062485C /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B0D106A32748B71800598734 /* AppointmentReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentReminder.swift; sourceTree = "<group>"; };
 		B0D9D1C32748002B0062485C /* HiDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D9D1C62748002B0062485C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0D9D1C82748002B0062485C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,7 @@
 		B0D9D1CF2748002D0062485C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0D9D1D22748002D0062485C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0D9D1D42748002D0062485C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0D9D1DA2748008A0062485C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,9 +40,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0D106A02748B67800598734 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0D106A32748B71800598734 /* AppointmentReminder.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B0D106A12748B69000598734 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B0D9D1CC2748002B0062485C /* Main.storyboard */,
+				B0D9D1D12748002D0062485C /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B0D106A22748B6A800598734 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B0D9D1CA2748002B0062485C /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		B0D9D1BA2748002B0062485C = {
 			isa = PBXGroup;
 			children = (
+				B0D9D1DA2748008A0062485C /* README.md */,
 				B0D9D1C52748002B0062485C /* HiDoctor */,
 				B0D9D1C42748002B0062485C /* Products */,
 			);
@@ -58,10 +87,10 @@
 			children = (
 				B0D9D1C62748002B0062485C /* AppDelegate.swift */,
 				B0D9D1C82748002B0062485C /* SceneDelegate.swift */,
-				B0D9D1CA2748002B0062485C /* ViewController.swift */,
-				B0D9D1CC2748002B0062485C /* Main.storyboard */,
+				B0D106A02748B67800598734 /* Model */,
+				B0D106A12748B69000598734 /* View */,
+				B0D106A22748B6A800598734 /* Controller */,
 				B0D9D1CF2748002D0062485C /* Assets.xcassets */,
-				B0D9D1D12748002D0062485C /* LaunchScreen.storyboard */,
 				B0D9D1D42748002D0062485C /* Info.plist */,
 			);
 			path = HiDoctor;
@@ -139,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0D9D1CB2748002B0062485C /* ViewController.swift in Sources */,
+				B0D106A42748B71800598734 /* AppointmentReminder.swift in Sources */,
 				B0D9D1C72748002B0062485C /* AppDelegate.swift in Sources */,
 				B0D9D1C92748002B0062485C /* SceneDelegate.swift in Sources */,
 			);
