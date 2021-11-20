@@ -83,7 +83,7 @@
             </objects>
             <point key="canvasLocation" x="1576.8115942028987" y="27.455357142857142"/>
         </scene>
-        <!--View Appointment-->
+        <!--Edit Appointment-->
         <scene sceneID="l3Z-Fp-a7N">
             <objects>
                 <tableViewController id="FqD-T4-6Gx" customClass="AppointmentDetailViewController" customModule="HiDoctor" customModuleProvider="target" sceneMemberID="viewController">
@@ -93,14 +93,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AppointmentDetailCell" textLabel="EwR-yu-xb2" style="IBUITableViewCellStyleDefault" id="K4U-UN-mZN">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="45.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K4U-UN-mZN" id="tUO-zQ-tRv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="45.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EwR-yu-xb2">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="20" y="0.0" width="374" height="45.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                             <nil key="textColor"/>
@@ -109,17 +109,90 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditTitleCell" id="5L6-BU-6ii" customClass="EditTitleCell" customModule="HiDoctor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="90" width="414" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5L6-BU-6ii" id="maP-SR-wb2">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="34.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TextField" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c3Y-Jn-nBR">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="34.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="c3Y-Jn-nBR" secondAttribute="trailing" constant="20" symbolic="YES" id="55w-AQ-YxJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="c3Y-Jn-nBR" secondAttribute="bottom" id="InE-Zj-fSj"/>
+                                        <constraint firstItem="c3Y-Jn-nBR" firstAttribute="leading" secondItem="maP-SR-wb2" secondAttribute="leading" constant="20" symbolic="YES" id="rJU-He-Ajn"/>
+                                        <constraint firstItem="c3Y-Jn-nBR" firstAttribute="top" secondItem="maP-SR-wb2" secondAttribute="top" id="wfH-ly-M4z"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleTextField" destination="c3Y-Jn-nBR" id="hxf-ag-p1r"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditDateCell" rowHeight="216" id="2Hz-Zu-vI9" customClass="EditDateCell" customModule="HiDoctor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="124.5" width="414" height="216"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Hz-Zu-vI9" id="ok5-ae-Vb0">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="w5K-ZL-biS">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                                        </datePicker>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="w5K-ZL-biS" secondAttribute="bottom" id="0dK-p8-b43"/>
+                                        <constraint firstItem="w5K-ZL-biS" firstAttribute="leading" secondItem="ok5-ae-Vb0" secondAttribute="leading" id="7aB-kB-mse"/>
+                                        <constraint firstItem="w5K-ZL-biS" firstAttribute="top" secondItem="ok5-ae-Vb0" secondAttribute="top" id="GiH-sN-jeE"/>
+                                        <constraint firstAttribute="trailing" secondItem="w5K-ZL-biS" secondAttribute="trailing" id="lK8-dL-czZ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="datePicker" destination="w5K-ZL-biS" id="z3H-pq-k1r"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditNotesCell" rowHeight="216" id="730-Vv-lUF" customClass="EditNotesCell" customModule="HiDoctor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="340.5" width="414" height="216"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="730-Vv-lUF" id="ANU-cA-jqR">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Notes" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bi1-0l-vZ4">
+                                            <rect key="frame" x="20" y="11" width="374" height="194"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="194" id="Yta-a0-d1R"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Bi1-0l-vZ4" secondAttribute="trailing" id="Nsl-5a-jtV"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Bi1-0l-vZ4" secondAttribute="bottom" id="hyu-uO-tA2"/>
+                                        <constraint firstItem="Bi1-0l-vZ4" firstAttribute="top" secondItem="ANU-cA-jqR" secondAttribute="topMargin" id="nP3-jE-P7V"/>
+                                        <constraint firstItem="Bi1-0l-vZ4" firstAttribute="leading" secondItem="ANU-cA-jqR" secondAttribute="leadingMargin" id="oex-5a-yQh"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="notesTextView" destination="Bi1-0l-vZ4" id="UBj-pZ-gj9"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="FqD-T4-6Gx" id="9J3-ox-INj"/>
                             <outlet property="delegate" destination="FqD-T4-6Gx" id="njT-Lg-5dM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="View Appointment" largeTitleDisplayMode="never" id="Db4-uT-4Xd"/>
+                    <navigationItem key="navigationItem" title="Edit Appointment" largeTitleDisplayMode="never" id="Db4-uT-4Xd"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iny-uh-1sD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2497" y="27"/>
+            <point key="canvasLocation" x="2494.202898550725" y="26.785714285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="taE-3V-6FM">

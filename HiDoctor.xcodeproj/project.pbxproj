@@ -12,6 +12,9 @@
 		B0C2ABD9274905C900BA4EA0 /* AppointmentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2ABD8274905C900BA4EA0 /* AppointmentDetailViewController.swift */; };
 		B0D106A42748B71800598734 /* AppointmentReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D106A32748B71800598734 /* AppointmentReminder.swift */; };
 		B0D54D4F27492AD7006A0031 /* AppointmentDetailViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D54D4E27492AD7006A0031 /* AppointmentDetailViewDataSource.swift */; };
+		B0D54D512749396C006A0031 /* EditTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D54D502749396C006A0031 /* EditTitleCell.swift */; };
+		B0D54D53274939D0006A0031 /* EditDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D54D52274939D0006A0031 /* EditDateCell.swift */; };
+		B0D54D55274939FE006A0031 /* EditNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D54D54274939FE006A0031 /* EditNotesCell.swift */; };
 		B0D9D1C72748002B0062485C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D1C62748002B0062485C /* AppDelegate.swift */; };
 		B0D9D1C92748002B0062485C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D1C82748002B0062485C /* SceneDelegate.swift */; };
 		B0D9D1CB2748002B0062485C /* AppointmentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D1CA2748002B0062485C /* AppointmentListViewController.swift */; };
@@ -26,6 +29,9 @@
 		B0C2ABD8274905C900BA4EA0 /* AppointmentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailViewController.swift; sourceTree = "<group>"; };
 		B0D106A32748B71800598734 /* AppointmentReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentReminder.swift; sourceTree = "<group>"; };
 		B0D54D4E27492AD7006A0031 /* AppointmentDetailViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailViewDataSource.swift; sourceTree = "<group>"; };
+		B0D54D502749396C006A0031 /* EditTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTitleCell.swift; sourceTree = "<group>"; };
+		B0D54D52274939D0006A0031 /* EditDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDateCell.swift; sourceTree = "<group>"; };
+		B0D54D54274939FE006A0031 /* EditNotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotesCell.swift; sourceTree = "<group>"; };
 		B0D9D1C32748002B0062485C /* HiDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D9D1C62748002B0062485C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0D9D1C82748002B0062485C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +70,9 @@
 				B0D9D1CC2748002B0062485C /* Main.storyboard */,
 				B0D9D1D12748002D0062485C /* LaunchScreen.storyboard */,
 				B0953F2D2748F08A00872AAD /* AppointmentListCell.swift */,
+				B0D54D502749396C006A0031 /* EditTitleCell.swift */,
+				B0D54D52274939D0006A0031 /* EditDateCell.swift */,
+				B0D54D54274939FE006A0031 /* EditNotesCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,10 +190,13 @@
 			files = (
 				B0D54D4F27492AD7006A0031 /* AppointmentDetailViewDataSource.swift in Sources */,
 				B0D9D1CB2748002B0062485C /* AppointmentListViewController.swift in Sources */,
+				B0D54D512749396C006A0031 /* EditTitleCell.swift in Sources */,
 				B0C2ABD9274905C900BA4EA0 /* AppointmentDetailViewController.swift in Sources */,
 				B0D106A42748B71800598734 /* AppointmentReminder.swift in Sources */,
 				B0D9D1C72748002B0062485C /* AppDelegate.swift in Sources */,
 				B0D9D1C92748002B0062485C /* SceneDelegate.swift in Sources */,
+				B0D54D55274939FE006A0031 /* EditNotesCell.swift in Sources */,
+				B0D54D53274939D0006A0031 /* EditDateCell.swift in Sources */,
 				B0953F2E2748F08A00872AAD /* AppointmentListCell.swift in Sources */,
 				B0358BFE27491C9500F344B5 /* AppointmentListDataSource.swift in Sources */,
 			);
