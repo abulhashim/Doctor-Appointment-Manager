@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0358BFE27491C9500F344B5 /* AppointmentListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0358BFD27491C9500F344B5 /* AppointmentListDataSource.swift */; };
 		B0953F2E2748F08A00872AAD /* AppointmentListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0953F2D2748F08A00872AAD /* AppointmentListCell.swift */; };
+		B0C2ABD9274905C900BA4EA0 /* AppointmentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2ABD8274905C900BA4EA0 /* AppointmentDetailViewController.swift */; };
 		B0D106A42748B71800598734 /* AppointmentReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D106A32748B71800598734 /* AppointmentReminder.swift */; };
+		B0D54D4F27492AD7006A0031 /* AppointmentDetailViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D54D4E27492AD7006A0031 /* AppointmentDetailViewDataSource.swift */; };
 		B0D9D1C72748002B0062485C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D1C62748002B0062485C /* AppDelegate.swift */; };
 		B0D9D1C92748002B0062485C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D1C82748002B0062485C /* SceneDelegate.swift */; };
 		B0D9D1CB2748002B0062485C /* AppointmentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D1CA2748002B0062485C /* AppointmentListViewController.swift */; };
@@ -18,8 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B0358BFD27491C9500F344B5 /* AppointmentListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentListDataSource.swift; sourceTree = "<group>"; };
 		B0953F2D2748F08A00872AAD /* AppointmentListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentListCell.swift; sourceTree = "<group>"; };
+		B0C2ABD8274905C900BA4EA0 /* AppointmentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailViewController.swift; sourceTree = "<group>"; };
 		B0D106A32748B71800598734 /* AppointmentReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentReminder.swift; sourceTree = "<group>"; };
+		B0D54D4E27492AD7006A0031 /* AppointmentDetailViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailViewDataSource.swift; sourceTree = "<group>"; };
 		B0D9D1C32748002B0062485C /* HiDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D9D1C62748002B0062485C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0D9D1C82748002B0062485C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +52,8 @@
 			isa = PBXGroup;
 			children = (
 				B0D106A32748B71800598734 /* AppointmentReminder.swift */,
+				B0358BFD27491C9500F344B5 /* AppointmentListDataSource.swift */,
+				B0D54D4E27492AD7006A0031 /* AppointmentDetailViewDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -64,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				B0D9D1CA2748002B0062485C /* AppointmentListViewController.swift */,
+				B0C2ABD8274905C900BA4EA0 /* AppointmentDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,11 +179,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0D54D4F27492AD7006A0031 /* AppointmentDetailViewDataSource.swift in Sources */,
 				B0D9D1CB2748002B0062485C /* AppointmentListViewController.swift in Sources */,
+				B0C2ABD9274905C900BA4EA0 /* AppointmentDetailViewController.swift in Sources */,
 				B0D106A42748B71800598734 /* AppointmentReminder.swift in Sources */,
 				B0D9D1C72748002B0062485C /* AppDelegate.swift in Sources */,
 				B0D9D1C92748002B0062485C /* SceneDelegate.swift in Sources */,
 				B0953F2E2748F08A00872AAD /* AppointmentListCell.swift in Sources */,
+				B0358BFE27491C9500F344B5 /* AppointmentListDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

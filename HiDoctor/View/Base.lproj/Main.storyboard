@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vIY-du-cW4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iI7-yi-OIn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -16,11 +16,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AppointmentListCell" rowHeight="99" id="kCX-fk-317" customClass="AppointmentListCell" customModule="HiDoctor" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AppointmentListCell" rowHeight="99" id="kCX-fk-317" customClass="AppointmentListCell" customModule="HiDoctor" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="99"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kCX-fk-317" id="OXI-R8-ocO">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="384.5" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOa-CI-RF2">
@@ -34,7 +34,7 @@
                                                 <backgroundConfiguration key="background" image="circle" catalog="system"/>
                                             </buttonConfiguration>
                                             <connections>
-                                                <action selector="doneButtonTriggered:" destination="kCX-fk-317" eventType="touchUpInside" id="Ubu-tY-oz0"/>
+                                                <action selector="doneButtonTriggered:" destination="kCX-fk-317" eventType="touchUpInside" id="Z9R-h9-ojz"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euy-0P-H24">
@@ -51,8 +51,8 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="sf8-q9-Z1B" secondAttribute="trailing" constant="306" id="4e1-66-WSE"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Euy-0P-H24" secondAttribute="trailing" constant="309" id="Bhx-hz-u93"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sf8-q9-Z1B" secondAttribute="trailing" id="4e1-66-WSE"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Euy-0P-H24" secondAttribute="trailing" id="Bhx-hz-u93"/>
                                         <constraint firstItem="sf8-q9-Z1B" firstAttribute="top" secondItem="Euy-0P-H24" secondAttribute="bottom" constant="11" id="UYW-Iq-RwX"/>
                                         <constraint firstItem="sf8-q9-Z1B" firstAttribute="leading" secondItem="Euy-0P-H24" secondAttribute="leading" id="aCL-po-nJl"/>
                                         <constraint firstItem="Euy-0P-H24" firstAttribute="leading" secondItem="KOa-CI-RF2" secondAttribute="trailing" constant="8" symbolic="YES" id="eWE-uN-hMO"/>
@@ -64,8 +64,9 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="sf8-q9-Z1B" id="IYM-ck-JU9"/>
-                                    <outlet property="doneButton" destination="KOa-CI-RF2" id="w54-UH-ije"/>
+                                    <outlet property="doneButton" destination="KOa-CI-RF2" id="pAT-Js-q9e"/>
                                     <outlet property="titleLabel" destination="Euy-0P-H24" id="g5L-O9-9VG"/>
+                                    <segue destination="FqD-T4-6Gx" kind="show" identifier="ShowAppointmentDetailSegue" id="BMW-KK-DR4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -79,6 +80,62 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ApG-y4-7CR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576.8115942028987" y="27.455357142857142"/>
+        </scene>
+        <!--View Appointment-->
+        <scene sceneID="l3Z-Fp-a7N">
+            <objects>
+                <tableViewController id="FqD-T4-6Gx" customClass="AppointmentDetailViewController" customModule="HiDoctor" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="gvh-zv-Tcg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AppointmentDetailCell" textLabel="EwR-yu-xb2" style="IBUITableViewCellStyleDefault" id="K4U-UN-mZN">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K4U-UN-mZN" id="tUO-zQ-tRv">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EwR-yu-xb2">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FqD-T4-6Gx" id="9J3-ox-INj"/>
+                            <outlet property="delegate" destination="FqD-T4-6Gx" id="njT-Lg-5dM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="View Appointment" largeTitleDisplayMode="never" id="Db4-uT-4Xd"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iny-uh-1sD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2497" y="27"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="taE-3V-6FM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iI7-yi-OIn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Fb7-h4-85v">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vIY-du-cW4" kind="relationship" relationship="rootViewController" id="2F7-QS-TNl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pmd-D5-FWb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="666.66666666666674" y="27.455357142857142"/>
         </scene>
