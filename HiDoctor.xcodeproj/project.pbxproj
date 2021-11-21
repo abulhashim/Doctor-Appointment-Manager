@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B0358BFE27491C9500F344B5 /* AppointmentListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0358BFD27491C9500F344B5 /* AppointmentListDataSource.swift */; };
+		B094F76B27494F07003C3275 /* AppointmentDetailEditDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B094F76A27494F07003C3275 /* AppointmentDetailEditDataSource.swift */; };
 		B0953F2E2748F08A00872AAD /* AppointmentListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0953F2D2748F08A00872AAD /* AppointmentListCell.swift */; };
 		B0C2ABD9274905C900BA4EA0 /* AppointmentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2ABD8274905C900BA4EA0 /* AppointmentDetailViewController.swift */; };
 		B0D106A42748B71800598734 /* AppointmentReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D106A32748B71800598734 /* AppointmentReminder.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		B0358BFD27491C9500F344B5 /* AppointmentListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentListDataSource.swift; sourceTree = "<group>"; };
+		B094F76A27494F07003C3275 /* AppointmentDetailEditDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailEditDataSource.swift; sourceTree = "<group>"; };
 		B0953F2D2748F08A00872AAD /* AppointmentListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentListCell.swift; sourceTree = "<group>"; };
 		B0C2ABD8274905C900BA4EA0 /* AppointmentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailViewController.swift; sourceTree = "<group>"; };
 		B0D106A32748B71800598734 /* AppointmentReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentReminder.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				B0D106A32748B71800598734 /* AppointmentReminder.swift */,
 				B0358BFD27491C9500F344B5 /* AppointmentListDataSource.swift */,
 				B0D54D4E27492AD7006A0031 /* AppointmentDetailViewDataSource.swift */,
+				B094F76A27494F07003C3275 /* AppointmentDetailEditDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				B0D54D4F27492AD7006A0031 /* AppointmentDetailViewDataSource.swift in Sources */,
 				B0D9D1CB2748002B0062485C /* AppointmentListViewController.swift in Sources */,
 				B0D54D512749396C006A0031 /* EditTitleCell.swift in Sources */,
+				B094F76B27494F07003C3275 /* AppointmentDetailEditDataSource.swift in Sources */,
 				B0C2ABD9274905C900BA4EA0 /* AppointmentDetailViewController.swift in Sources */,
 				B0D106A42748B71800598734 /* AppointmentReminder.swift in Sources */,
 				B0D9D1C72748002B0062485C /* AppDelegate.swift in Sources */,

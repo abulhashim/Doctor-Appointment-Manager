@@ -9,6 +9,15 @@ import UIKit
 
 class AppointmentListDataSource: NSObject {
     private lazy var dateFormatter = RelativeDateTimeFormatter()
+    
+    func update(_ appointment: Appointment, at row: Int) {
+        Appointment.testData[row] = appointment
+    }
+
+    
+    func appointment(at row: Int) -> Appointment {
+        return Appointment.testData[row]
+    }
 }
 
 

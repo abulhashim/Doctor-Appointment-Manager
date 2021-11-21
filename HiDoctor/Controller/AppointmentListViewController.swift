@@ -17,8 +17,14 @@ class AppointmentListViewController: UITableViewController {
            let destination = segue.destination as? AppointmentDetailViewController,
            let cell = sender as? UITableViewCell,
            let indexPath = tableView.indexPath(for: cell) {
-            let appointment = Appointment.testData[indexPath.row]
-            destination.configure(with: appointment)
+            let rowIndex = indexPath.row
+             guard let appointment = appointmentListDataSource?.appointment(at: rowIndex) else {
+                 fatalError("Couldn't find data source for appointment list.")
+             }
+            destination.configure(with: appointment) { appointment in
+                self.appointmentListDataSource?.update(appointment, at: rowIndex)
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
         }
     }
     
