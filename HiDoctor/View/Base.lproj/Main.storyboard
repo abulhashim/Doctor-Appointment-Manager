@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Appointment Manager-->
+        <!--Appointment List View Controller-->
         <scene sceneID="rvz-s5-3SU">
             <objects>
                 <tableViewController id="vIY-du-cW4" customClass="AppointmentListViewController" customModule="HiDoctor" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,10 +82,26 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Appointment Manager" id="hFx-Pc-fpu">
+                    <navigationItem key="navigationItem" id="hFx-Pc-fpu">
+                        <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title="Back" id="aHQ-xf-KMN"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="qIG-75-xRW">
+                            <rect key="frame" x="83" y="5.5" width="248" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Today"/>
+                                <segment title="Upcoming"/>
+                                <segment title="All"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentControlChanged:" destination="vIY-du-cW4" eventType="valueChanged" id="22w-g6-bQR"/>
+                            </connections>
+                        </segmentedControl>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="filterSegmentedControl" destination="qIG-75-xRW" id="CER-Jz-YUb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ApG-y4-7CR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

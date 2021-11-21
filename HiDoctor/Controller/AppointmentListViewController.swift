@@ -9,10 +9,15 @@ import UIKit
 
 class AppointmentListViewController: UITableViewController {
     
+    @IBOutlet var filterSegmentedControl: UISegmentedControl!
+    
     private var appointmentListDataSource: AppointmentListDataSource?
     static let showDetailSegueIdentifier = "ShowAppointmentDetailSegue"
     static let mainStoryboardName = "Main"
     static let detailViewControllerIdentifier = "AppointmentDetailViewController"
+    private var filter: AppointmentListDataSource.Filter {
+        return AppointmentListDataSource.Filter(rawValue: filterSegmentedControl.selectedSegmentIndex) ?? .today
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -50,6 +55,12 @@ class AppointmentListViewController: UITableViewController {
     @IBAction func addButtonTriggered(_ sender: UIBarButtonItem) {
         addAppointment()
     }
+    
+    @IBAction func segmentControlChanged(_ sender: UISegmentedControl) {
+        appointmentListDataSource?.filter = filter
+        tableView.reloadData()
+    }
+    
     
     private func addAppointment() {
         let storyboard = UIStoryboard(name: Self.mainStoryboardName, bundle: nil)

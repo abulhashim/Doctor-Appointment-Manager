@@ -38,6 +38,9 @@ class AppointmentDetailViewDataSource: NSObject {
                 return appointment?.title
             case .date:
                 guard let date = appointment?.dueDate else { return nil }
+                if Locale.current.calendar.isDateInToday(date) {
+                    return NSLocalizedString("Today", comment: "Today for date description")
+                }
                 return Self.dateFormatter.string(from: date)
             case .time:
                 guard let date = appointment?.dueDate else { return nil }
