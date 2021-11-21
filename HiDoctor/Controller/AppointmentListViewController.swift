@@ -32,7 +32,7 @@ class AppointmentListViewController: UITableViewController {
 
             destination.configure(with: appointment, editAction: { appointment in
                 self.appointmentListDataSource?.update(appointment, at: rowIndex)
-                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+                self.tableView.reloadData()
             })
         }
     }
@@ -65,11 +65,11 @@ class AppointmentListViewController: UITableViewController {
     private func addAppointment() {
         let storyboard = UIStoryboard(name: Self.mainStoryboardName, bundle: nil)
         let detailViewController: AppointmentDetailViewController = storyboard.instantiateViewController(identifier: Self.detailViewControllerIdentifier)
-        let appointment = Appointment(title: "New Appointment", dueDate: Date())
+        let appointment = Appointment(id: UUID().uuidString, title: "New Appointment", dueDate: Date())
         detailViewController.configure(with: appointment, isNew: true, addAction: { appointment in
-            self.appointmentListDataSource?.add(appointment)
-            self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
-
+            if let index = self.appointmentListDataSource?.add(appointment) {
+                self.tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+            }
         })
         let navigationController = UINavigationController(rootViewController: detailViewController)
         present(navigationController, animated: true, completion: nil)

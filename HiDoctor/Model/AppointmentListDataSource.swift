@@ -36,17 +36,43 @@ class AppointmentListDataSource: NSObject {
     
     
     func update(_ appointment: Appointment, at row: Int) {
-        Appointment.testData[row] = appointment
+        let index = self.index(for: row)
+        Appointment.testData[index] = appointment
     }
 
+    func delete(at row: Int) {
+        let index = self.index(for: row)
+        Appointment.testData.remove(at: index)
+    }
     
     func appointment(at row: Int) -> Appointment {
         return filteredAppointments[row]
     }
     
     
-    func add(_ appointment: Appointment) {
+    func add(_ appointment: Appointment) -> Int? {
         Appointment.testData.insert(appointment, at: 0)
+        return filteredAppointments.firstIndex(where: { $0.id == appointment.id })
+    }
+    
+    func index(for filteredIndex: Int) -> Int {
+        let filteredAppointment = filteredAppointments[filteredIndex]
+        guard let index = Appointment.testData.firstIndex(where: { $0.id == filteredAppointment.id }) else {
+            fatalError("Couldn't retrieve index in source array")
+        }
+        return index
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else {
+            return
+        }
+        delete(at: indexPath.row)
+        tableView.performBatchUpdates({
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }) { (_) in
+            tableView.reloadData()
+        }
     }
 }
 
