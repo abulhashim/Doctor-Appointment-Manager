@@ -8,54 +8,84 @@
 import UIKit
 
 class AppointmentDetailViewController: UITableViewController {
+    
     typealias AppointmentChangeAction = (Appointment) -> Void
     
     private var appointment: Appointment?
     private var tempAppointment: Appointment?
     private var dataSource: UITableViewDataSource?
-    private var appointmentChangeAction: AppointmentChangeAction?
+    private var appointmentEditAction: AppointmentChangeAction?
+    private var appointmentAddAction: AppointmentChangeAction?
+    private var isNew = false
 
-    func configure(with appointment: Appointment, changeAction: @escaping AppointmentChangeAction) {
+    func configure(with appointment: Appointment, isNew: Bool = false, addAction: AppointmentChangeAction? = nil, editAction: AppointmentChangeAction? = nil) {
         self.appointment = appointment
-        self.appointmentChangeAction = changeAction
+        self.isNew = isNew
+        self.appointmentAddAction = addAction
+        self.appointmentEditAction = editAction
+        if isViewLoaded {
+            setEditing(isNew, animated: false)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setEditing(false, animated: false)
+        setEditing(isNew, animated: false)
         navigationItem.setRightBarButton(editButtonItem, animated: false)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: AppointmentDetailEditDataSource.dateLabelCellIdentifier)
-
     }
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let navigationController = navigationController,
+           !navigationController.isToolbarHidden {
+            navigationController.setToolbarHidden(true, animated: animated)
+        }
+    }
+    
+    
+    
+    fileprivate func transitionToViewMode(_ appointment: Appointment) {
+        if isNew {
+            let addAppointment = tempAppointment ?? appointment
+            dismiss(animated: true) {
+                self.appointmentAddAction?(addAppointment)
+            }
+            return
+        }
+        if let tempAppointment = tempAppointment {
+            self.appointment = tempAppointment
+            self.tempAppointment = nil
+            appointmentEditAction?(tempAppointment)
+            dataSource = AppointmentDetailViewDataSource(appointment: tempAppointment)
+        } else {
+            dataSource = AppointmentDetailViewDataSource(appointment: appointment)
+        }
+        navigationItem.title = NSLocalizedString("View Appointment", comment: "View appointment nav title")
+        navigationItem.leftBarButtonItem = nil
+        editButtonItem.isEnabled = true
+    }
+    
+    fileprivate func transitionToEditMode(_ appointment: Appointment) {
+        dataSource = AppointmentDetailEditDataSource(appointment: appointment) { appointment in
+            self.tempAppointment = appointment
+            self.editButtonItem.isEnabled = true
+        }
+        navigationItem.title = isNew ? NSLocalizedString("Add Appointment", comment: "add appointment nav title") :
+        NSLocalizedString("Edit Appointment", comment: "edit appointment nav title")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonTrigger))
+    }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         guard let appointment = appointment else {
             fatalError("No Appointment found for detail view")
         }
-        
         if editing {
-            dataSource = AppointmentDetailEditDataSource(appointment: appointment) { appointment in
-                self.tempAppointment = appointment
-                self.editButtonItem.isEnabled = true
-            }
-            navigationItem.title = NSLocalizedString("Edit Appointment", comment: "Edit appointment nav title")
-            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonTrigger))
-
+            transitionToEditMode(appointment)
           } else {
-              if let tempAppointment = tempAppointment {
-                  self.appointment = tempAppointment
-                  self.tempAppointment = nil
-                  appointmentChangeAction?(tempAppointment)
-                  dataSource = AppointmentDetailViewDataSource(appointment: tempAppointment)
-              } else {
-                  dataSource = AppointmentDetailViewDataSource(appointment: appointment)
-              }
-              navigationItem.title = NSLocalizedString("View Appointment", comment: "View appointment nav title")
-              navigationItem.leftBarButtonItem = nil
-              editButtonItem.isEnabled = true
+              transitionToViewMode(appointment)
           }
           tableView.dataSource = dataSource
           tableView.reloadData()
@@ -63,7 +93,12 @@ class AppointmentDetailViewController: UITableViewController {
     
     @objc
     func cancelButtonTrigger() {
-        setEditing(false, animated: true)
+        if isNew {
+            dismiss(animated: true, completion: nil)
+        } else {
+            tempAppointment = nil
+            setEditing(false, animated: true)
+        }
     }
 }
 

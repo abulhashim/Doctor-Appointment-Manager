@@ -18,6 +18,11 @@ class AppointmentListDataSource: NSObject {
     func appointment(at row: Int) -> Appointment {
         return Appointment.testData[row]
     }
+    
+    
+    func add(_ appointment: Appointment) {
+        Appointment.testData.insert(appointment, at: 0)
+    }
 }
 
 

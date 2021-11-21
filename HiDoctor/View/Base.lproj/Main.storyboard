@@ -75,9 +75,17 @@
                             <outlet property="delegate" destination="vIY-du-cW4" id="BLV-u7-cXY"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem systemItem="add" id="ewA-Fv-RAC">
+                            <connections>
+                                <action selector="addButtonTriggered:" destination="vIY-du-cW4" id="zaR-y7-DDO"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Appointment Manager" id="hFx-Pc-fpu">
                         <barButtonItem key="backBarButtonItem" title="Back" id="aHQ-xf-KMN"/>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ApG-y4-7CR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,7 +94,7 @@
         <!--Edit Appointment-->
         <scene sceneID="l3Z-Fp-a7N">
             <objects>
-                <tableViewController id="FqD-T4-6Gx" customClass="AppointmentDetailViewController" customModule="HiDoctor" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AppointmentDetailViewController" id="FqD-T4-6Gx" customClass="AppointmentDetailViewController" customModule="HiDoctor" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="gvh-zv-Tcg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,13 +208,19 @@
         <!--Navigation Controller-->
         <scene sceneID="taE-3V-6FM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iI7-yi-OIn" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="iI7-yi-OIn" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Fb7-h4-85v">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YqL-Fd-hET">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <toolbarAppearance key="scrollEdgeAppearance"/>
+                    </toolbar>
                     <connections>
                         <segue destination="vIY-du-cW4" kind="relationship" relationship="rootViewController" id="2F7-QS-TNl"/>
                     </connections>
