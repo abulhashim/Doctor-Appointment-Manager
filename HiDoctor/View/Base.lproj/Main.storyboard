@@ -162,24 +162,27 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Notes" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bi1-0l-vZ4">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="C3s-Ip-7If">
                                             <rect key="frame" x="20" y="11" width="374" height="194"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="194" id="Yta-a0-d1R"/>
+                                                <constraint firstAttribute="height" constant="194" id="suJ-JR-Sv1"/>
                                             </constraints>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <color key="textColor" systemColor="labelColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Bi1-0l-vZ4" secondAttribute="trailing" id="Nsl-5a-jtV"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Bi1-0l-vZ4" secondAttribute="bottom" id="hyu-uO-tA2"/>
-                                        <constraint firstItem="Bi1-0l-vZ4" firstAttribute="top" secondItem="ANU-cA-jqR" secondAttribute="topMargin" id="nP3-jE-P7V"/>
-                                        <constraint firstItem="Bi1-0l-vZ4" firstAttribute="leading" secondItem="ANU-cA-jqR" secondAttribute="leadingMargin" id="oex-5a-yQh"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="C3s-Ip-7If" secondAttribute="trailing" id="7H1-63-b5W"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="C3s-Ip-7If" secondAttribute="bottom" id="J6P-hr-5Zr"/>
+                                        <constraint firstItem="C3s-Ip-7If" firstAttribute="leading" secondItem="ANU-cA-jqR" secondAttribute="leadingMargin" id="Lh6-pJ-wLO"/>
+                                        <constraint firstItem="C3s-Ip-7If" firstAttribute="top" secondItem="ANU-cA-jqR" secondAttribute="topMargin" id="buX-iO-hOA"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="notesTextView" destination="Bi1-0l-vZ4" id="UBj-pZ-gj9"/>
+                                    <outlet property="notesTextView" destination="C3s-Ip-7If" id="wtP-Vp-l5c"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -215,6 +218,9 @@
     </scenes>
     <resources>
         <image name="circle" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

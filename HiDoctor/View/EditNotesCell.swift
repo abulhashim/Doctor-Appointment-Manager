@@ -11,8 +11,8 @@ class EditNotesCell: UITableViewCell {
     
     typealias NotesChangeAction = (String) -> Void
     
-    @IBOutlet var notesTextView: UITextField!
-    
+    @IBOutlet var notesTextView: UITextView!
+
 
     private var notesChangeAction: NotesChangeAction?
 
