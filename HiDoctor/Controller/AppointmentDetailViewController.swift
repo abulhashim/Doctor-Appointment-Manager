@@ -102,6 +102,27 @@ class AppointmentDetailViewController: UITableViewController {
     }
 }
 
-
+extension AppointmentDetailViewController {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if isEditing {
+            guard let editSection = AppointmentDetailEditDataSource.AppointmentSection(rawValue: indexPath.section) else {
+                return
+            }
+            if editSection == .dueDate, indexPath.row == 0 {
+                cell.textLabel?.font = UIFont.preferredFont(forTextStyle: .body)
+            }
+        } else {
+            cell.backgroundColor = .systemBackground
+            guard let viewRow = AppointmentDetailViewDataSource.AppointmentRow(rawValue: indexPath.row) else {
+                return
+            }
+            if viewRow == .title {
+                cell.textLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
+            } else {
+                cell.textLabel?.font = UIFont.preferredFont(forTextStyle: .body)
+            }
+        }
+    }
+}
 
 
