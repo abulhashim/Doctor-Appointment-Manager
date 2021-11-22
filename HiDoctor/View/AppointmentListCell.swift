@@ -23,7 +23,7 @@ class AppointmentListCell: UITableViewCell {
     func configure(title: String, dateText: String, isDone: Bool, doneButtonAction: @escaping DoneButtonAction) {
         titleLabel.text = title
         dateLabel.text = dateText
-        let image = isDone ? UIImage(systemName: "circle.fill") : UIImage(systemName: "circle")
+        let image = isDone ? UIImage(systemName: "stopwatch.fill") : UIImage(systemName: "stopwatch")
         doneButton.setBackgroundImage(image, for: .normal)
         self.doneButtonAction = doneButtonAction
     }
