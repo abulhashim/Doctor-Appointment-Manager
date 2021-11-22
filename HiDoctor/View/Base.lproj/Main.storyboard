@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Appointment List View Controller-->
+        <!--Appointments-->
         <scene sceneID="rvz-s5-3SU">
             <objects>
                 <tableViewController id="vIY-du-cW4" customClass="AppointmentListViewController" customModule="HiDoctor" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,7 +31,7 @@
                                             </constraints>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain">
-                                                <backgroundConfiguration key="background" image="circle" catalog="system"/>
+                                                <backgroundConfiguration key="background" image="stopwatch" catalog="system"/>
                                             </buttonConfiguration>
                                             <connections>
                                                 <action selector="doneButtonTriggered:" destination="kCX-fk-317" eventType="touchUpInside" id="Z9R-h9-ojz"/>
@@ -82,8 +82,7 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="hFx-Pc-fpu">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="Appointments" id="hFx-Pc-fpu">
                         <barButtonItem key="backBarButtonItem" title="Back" id="aHQ-xf-KMN"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="qIG-75-xRW">
                             <rect key="frame" x="83" y="5.5" width="248" height="33"/>
@@ -231,6 +230,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Fb7-h4-85v">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance"/>
                         <navigationBarAppearance key="scrollEdgeAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -249,7 +249,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="circle" catalog="system" width="128" height="121"/>
+        <image name="stopwatch" catalog="system" width="121" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

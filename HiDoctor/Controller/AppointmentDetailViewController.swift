@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AppointmentDetailViewController: UITableViewController {
     
@@ -30,6 +31,7 @@ class AppointmentDetailViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getNotifications()
         setEditing(isNew, animated: false)
         navigationItem.setRightBarButton(editButtonItem, animated: false)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: AppointmentDetailEditDataSource.dateLabelCellIdentifier)
@@ -123,6 +125,41 @@ extension AppointmentDetailViewController {
             }
         }
     }
+    
+    func getNotifications() {
+        
+        // Ask for Permission:
+        
+        let notificationCentre = UNUserNotificationCenter.current()
+        notificationCentre.requestAuthorization(options: [.alert, .sound]) { (accessGranted, error) in
+            // Later
+        }
+        
+        // Create a notification content:
+        
+        let appointmentWith = "Zaid"
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = "Appointment"
+        notificationContent.body = "You have an Appointment with this \(appointmentWith) person after 2 minutes"
+        
+        // Trigger:
+        
+        let date = Date().addingTimeInterval(5)
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .month, .second], from: date)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        
+        
+        // Create Request:
+        let uuidString = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuidString, content: notificationContent, trigger: trigger)
+        
+        // Register with NotificationCentre:
+        notificationCentre.add(request) { (error) in
+            // Later
+        }
+    }
+
 }
 
 

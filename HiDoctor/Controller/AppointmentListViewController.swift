@@ -39,7 +39,9 @@ class AppointmentListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        appointmentListDataSource = AppointmentListDataSource()
+        appointmentListDataSource = AppointmentListDataSource(appointmentCompletedAction: { appointmentIndex in
+            self.tableView.reloadRows(at: [IndexPath(row: appointmentIndex, section: 0)], with: .automatic)
+        })
         tableView.dataSource = appointmentListDataSource
     }
     

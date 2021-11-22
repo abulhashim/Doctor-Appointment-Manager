@@ -8,7 +8,6 @@
 import UIKit
 
 class AppointmentListCell: UITableViewCell {
-    
     typealias DoneButtonAction = () -> Void
     
     @IBOutlet var titleLabel: UILabel!
@@ -16,7 +15,6 @@ class AppointmentListCell: UITableViewCell {
     @IBOutlet var doneButton: UIButton!
     
     private var doneButtonAction: DoneButtonAction?
-    
     
     @IBAction func doneButtonTriggered(_ sender: UIButton) {
         doneButtonAction?()

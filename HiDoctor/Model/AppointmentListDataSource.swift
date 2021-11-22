@@ -8,6 +8,8 @@
 import UIKit
 
 class AppointmentListDataSource: NSObject {
+    typealias AppointmentCompletedAction = (Int) -> Void
+    
     private lazy var dateFormatter = RelativeDateTimeFormatter()
     
     enum Filter: Int {
@@ -33,6 +35,14 @@ class AppointmentListDataSource: NSObject {
     var filteredAppointments: [Appointment] {
         return Appointment.testData.filter { filter.shouldInclude(date: $0.dueDate) }.sorted { $0.dueDate < $1.dueDate }
      }
+    
+    
+    private var appointmentCompletedAction: AppointmentCompletedAction?
+    
+    init(appointmentCompletedAction: @escaping AppointmentCompletedAction) {
+        self.appointmentCompletedAction = appointmentCompletedAction
+        super.init()
+    }
     
     
     func update(_ appointment: Appointment, at row: Int) {
@@ -92,9 +102,9 @@ extension AppointmentListDataSource: UITableViewDataSource {
         let currentAppointment = Appointment.testData[indexPath.row]
         let dateText = currentAppointment.dueDateTimeText(for: filter)
         cell.configure(title: currentAppointment.title, dateText: dateText, isDone: currentAppointment.isComplete) {
-
             Appointment.testData[indexPath.row].isComplete.toggle()
             tableView.reloadRows(at: [indexPath], with: .none)
+            self.appointmentCompletedAction?(indexPath.row)
         }
         return cell
     }
@@ -140,5 +150,6 @@ extension Appointment {
             }
         }
     }
-    
 }
+
+
