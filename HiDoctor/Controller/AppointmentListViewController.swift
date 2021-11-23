@@ -22,6 +22,7 @@ class AppointmentListViewController: UITableViewController {
     
     var appointmentWith: String = ""
     var date: Date = Date()
+    var id: String = ""
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -83,6 +84,7 @@ class AppointmentListViewController: UITableViewController {
         
          appointmentWith = appointment.title
          date = appointment.dueDate
+         id = appointment.id
     }
     
     func getNotifications() {
@@ -102,8 +104,8 @@ class AppointmentListViewController: UITableViewController {
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
 
-        let uuidString = UUID().uuidString
-        let request = UNNotificationRequest(identifier: uuidString, content: notificationContent, trigger: trigger)
+        
+        let request = UNNotificationRequest(identifier: id, content: notificationContent, trigger: trigger)
         
         notificationCentre.add(request) { (error) in
            
@@ -112,3 +114,6 @@ class AppointmentListViewController: UITableViewController {
 }
 
 
+// Resources:
+// developer.apple.com/documentation
+// codewithchris
